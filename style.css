@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+
+body {
+	color: #000;
+	background-color: #A5CAD7;
+}
+
+form {
+	font-size: 70pt;
+	text-align:center;
+}
+
+p {
+	font-size: 50px;
+}
+
+.contents_header{
+	background-color: #06738F;
+	height: 100px;
+	width: 600px;
+}
+
+.contents_strong{
+	font-size: 20pt;
+	color: #d53205;
+	margin: 100px;
+}
+
