@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<title>JavaScriptサンプル</title>
+</head>
+<body>
+<title> じゃんけん </title>
+<p> 最初はグー、じゃんけん </p>
+
+
+<script>
+
+function janken(myhand) {
+	var hand = ["ぐー","ちょき","ぱー"]; // 手の配列
+	var aihand = Math.floor(3*Math.random()); // CPUが出す手を決める
+	var result = ""; // 変数の初期化
+	if( myhand == 0 ) { // 自分がぐーのとき
+		if( aihand == 0 ) { // 相手もぐーなら
+			result = "ひきわけ";
+		} else if( aihand == 1 ) { // 相手がぐーでなくてちょきなら
+			result = "かち";
+		} else { // それら以外、つまり相手がぱーなら
+			result = "まけ";
+		}
+	}
+
+	else if( myhand == 1 ) { // 自分がちょきのとき
+		if( aihand == 0 ) { // 相手もぐーなら
+			result = "まけ";
+		} else if( aihand == 1 ) { // 自分がちょきで相手がちょきなら
+			result = "あいこ";
+		} else { // それら以外、つまり相手がぱーなら
+			result = "かち";
+		}
+	}
+
+	else { // 自分がパーのとき
+		if( aihand == 0 ) { // 相手がぐーなら
+			result = "かち";
+		} else if( aihand == 1 ) { // 相手がぐーでなくてちょきなら
+			result = "まけ";
+		} else { // それら以外、つまり相手がぱーなら
+			result = "あいこ";
+		}
+	}
+
+	// 結果表示
+	alert("自分の手："+hand[myhand]+"\n相手の手："+hand[aihand]+"\n結果："+result);
+}
+
+</script>
+
+<form>
+<input type="image" value="ぐー" onclick="janken(0)" src=http://lmsnn.fc2web.com/material/M-j_gu01.png alt="グー">
+<input type="image" value="ちょき" onclick="janken(1)" src=http://lmsnn.fc2web.com/material/M-j_ch01.png alt="チョキ">
+<input type="image" value="ぱー" onclick="janken(2)" src=http://lmsnn.fc2web.com/material/M-j_pa02.png alt="パー">
+</form>
+
+<p> ポン！ </p>
+
+</body>
+</html>
+
